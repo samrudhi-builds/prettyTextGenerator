@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans', 'Segoe UI', system-ui, sans-serif;
+    background: #061234;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff 0%, #ff9ff3 50%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 40px;
+    font-size: 3em;
+    font-weight: bold;
+    text-shadow: 0 0 30px rgba(255, 159, 243, 0.5),
+                 0 0 60px rgba(167, 139, 250, 0.3);
+    filter: drop-shadow(0 0 20px rgba(255, 159, 243, 0.6))
+            drop-shadow(0 0 40px rgba(167, 139, 250, 0.4));
+    letter-spacing: 2px;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    height: 70vh;
+    min-height: 500px;
+    max-height: 70vh;
+}
+
+.input-section,
+.output-section {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    text-shadow: 0 0 10px rgba(255, 159, 243, 0.3);
+}
+
+textarea {
+    flex: 1;
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    border-radius: 12px;
+    resize: none;
+    font-family: inherit;
+    transition: all 0.3s;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    overflow-y: auto;
+    min-height: 0;
+}
+
+textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+textarea:focus {
+    outline: none;
+    border-color: rgba(255, 159, 243, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 20px rgba(255, 159, 243, 0.2);
+}
+
+#output-container {
+    flex: 1;
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    border-radius: 12px;
+    padding: 15px;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.05);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    min-height: 0;
+}
+
+#output-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+#output-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+}
+
+#output-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #ff9ff3, #a78bfa);
+    border-radius: 5px;
+}
+
+#output-container::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #ff80eb, #9370db);
+}
+
+.style-text {
+    font-size: 20px;
+    word-wrap: break-word;
+    line-height: 2;
+    color: #ffffff;
+    -webkit-user-select: text;
+    user-select: text;
+    padding: 8px 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    font-family: 'Noto Sans Symbols 2', 'Segoe UI Symbol', 'Apple Symbols', sans-serif;
+    font-feature-settings: normal;
+}
+
+.placeholder-text {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .main-content {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .input-section textarea {
+        min-height: 150px;
+    }
+
+    #output-container {
+        min-height: 300px;
+    }
+}
