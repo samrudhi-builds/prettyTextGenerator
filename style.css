@@ -5,40 +5,44 @@
 }
 
 body {
-    font-family: 'Noto Sans', 'Segoe UI', system-ui, sans-serif;
-    background: #061234;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #0a0e27;
     min-height: 100vh;
-    padding: 40px 20px;
+    padding: 30px 20px;
+    color: #e8e8e8;
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
+header {
+    margin-bottom: 35px;
+}
+
 h1 {
-    text-align: center;
-    background: linear-gradient(135deg, #ffffff 0%, #ff9ff3 50%, #a78bfa 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 40px;
-    font-size: 3em;
-    font-weight: bold;
-    text-shadow: 0 0 30px rgba(255, 159, 243, 0.5),
-                 0 0 60px rgba(167, 139, 250, 0.3);
-    filter: drop-shadow(0 0 20px rgba(255, 159, 243, 0.6))
-            drop-shadow(0 0 40px rgba(167, 139, 250, 0.4));
-    letter-spacing: 2px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: #94a3b8;
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 .main-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    height: 70vh;
+    grid-template-columns: 420px 1fr;
+    gap: 25px;
+    height: calc(100vh - 180px);
     min-height: 500px;
-    max-height: 70vh;
 }
 
 .input-section,
@@ -51,102 +55,177 @@ h1 {
 
 label {
     display: block;
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 10px;
-    font-size: 1.1em;
-    text-shadow: 0 0 10px rgba(255, 159, 243, 0.3);
+    font-weight: 500;
+    color: #cbd5e1;
+    margin-bottom: 12px;
+    font-size: 0.95em;
+    letter-spacing: -0.01em;
 }
 
 textarea {
     flex: 1;
     width: 100%;
-    padding: 15px;
-    font-size: 16px;
-    border: 1px solid rgba(167, 139, 250, 0.3);
-    border-radius: 12px;
+    padding: 18px;
+    font-size: 15px;
+    border: 1.5px solid #1e293b;
+    border-radius: 8px;
     resize: none;
-    font-family: inherit;
-    transition: all 0.3s;
-    background: rgba(255, 255, 255, 0.05);
-    color: #ffffff;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s ease;
+    background: #0f172a;
+    color: #f1f5f9;
     overflow-y: auto;
     min-height: 0;
+    line-height: 1.6;
 }
 
 textarea::placeholder {
-    color: rgba(255, 255, 255, 0.4);
+    color: #475569;
 }
 
 textarea:focus {
     outline: none;
-    border-color: rgba(255, 159, 243, 0.5);
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 20px rgba(255, 159, 243, 0.2);
+    border-color: #3b82f6;
+    background: #131b2e;
 }
 
 #output-container {
     flex: 1;
-    border: 1px solid rgba(167, 139, 250, 0.3);
-    border-radius: 12px;
-    padding: 15px;
+    border: 1.5px solid #1e293b;
+    border-radius: 8px;
+    padding: 8px;
     overflow-y: auto;
-    background: rgba(255, 255, 255, 0.05);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    background: #0f172a;
     min-height: 0;
 }
 
 #output-container::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
 }
 
 #output-container::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 5px;
+    background: transparent;
 }
 
 #output-container::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #ff9ff3, #a78bfa);
-    border-radius: 5px;
+    background: #334155;
+    border-radius: 4px;
 }
 
 #output-container::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #ff80eb, #9370db);
+    background: #475569;
+}
+
+.output-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: grid;
+    grid-template-columns: 120px 1fr auto;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 16px;
+    border-radius: 6px;
+    background: transparent;
+    margin-bottom: 2px;
+    transition: all 0.15s ease;
+    border: 1px solid transparent;
+}
+
+.output-item:hover {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+.style-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: #64748b;
+    letter-spacing: 0.03em;
+    text-transform: lowercase;
 }
 
 .style-text {
-    font-size: 20px;
+    font-size: 18px;
     word-wrap: break-word;
-    line-height: 2;
-    color: #ffffff;
+    line-height: 1.4;
+    color: #f8fafc;
     -webkit-user-select: text;
     user-select: text;
-    padding: 8px 0;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     font-family: 'Noto Sans Symbols 2', 'Segoe UI Symbol', 'Apple Symbols', sans-serif;
     font-feature-settings: normal;
 }
 
-.placeholder-text {
-    text-align: center;
-    color: rgba(255, 255, 255, 0.4);
-    padding: 20px;
-    font-style: italic;
+.copy-btn {
+    padding: 7px 14px;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 5px;
+    color: #cbd5e1;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+    font-family: 'Inter', sans-serif;
+}
+
+.copy-btn:hover {
+    background: #334155;
+    border-color: #475569;
+    color: #f1f5f9;
+}
+
+.copy-btn:active {
+    transform: scale(0.97);
+}
+
+.copy-btn.copied {
+    background: #065f46;
+    border-#475569;
+    padding: 40px 20px;
+    font-size: 14px;
 }
 
 /* Responsive design */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
     .main-content {
         grid-template-columns: 1fr;
         height: auto;
     }
 
     .input-section textarea {
-        min-height: 150px;
+        min-height: 180px;
     }
+
+    #output-container {
+        min-height: 400px;
+    }
+    
+    .output-item {
+        grid-template-columns: 100px 1fr auto;
+        gap: 12px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 640px) {
+    h1 {
+        font-size: 2em;
+    }
+    
+    .subtitle {
+        font-size: 1em;
+    }
+    
+    .output-item {
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+    }
+    
+    .style-label {
+        grid-column: 1 / -1;
+        margin-bottom: 4
 
     #output-container {
         min-height: 300px;

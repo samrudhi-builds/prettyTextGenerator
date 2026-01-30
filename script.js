@@ -42,11 +42,13 @@ const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 
 // Convert text to fancy style
 function convertText(text, styleChars) {
+    // Convert styleChars string to array to handle surrogate pairs properly
+    const styleArray = Array.from(styleChars);
     let result = '';
     for (let char of text) {
         const index = alphabet.indexOf(char);
         if (index !== -1) {
-            result += styleChars[index];
+            result += styleArray[index];
         } else {
             result += char; // Keep spaces, numbers, and special characters
         }
@@ -99,11 +101,26 @@ function updateOutput() {
     for (let [styleName, styleData] of Object.entries(styles)) {
         const convertedText = convertText(inputText, styleData.chars);
 
+        const outputItem = document.createElement('div');
+        outputItem.className = 'output-item';
+
+        const label = document.createElement('div');
+        label.className = 'style-label';
+        label.textContent = styleName;
+
         const textDiv = document.createElement('div');
         textDiv.className = 'style-text';
         textDiv.textContent = convertedText;
 
-        outputContainer.appendChild(textDiv);
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'copy-btn';
+        copyBtn.textContent = 'Copy';
+        copyBtn.onclick = () => copyToClipboard(convertedText, copyBtn);
+
+        outputItem.appendChild(label);
+        outputItem.appendChild(textDiv);
+        outputItem.appendChild(copyBtn);
+        outputContainer.appendChild(outputItem);
     }
 }
 
