@@ -2,7 +2,7 @@
 
 > turn your boring text into something that actually looks cool
 
-  [prewtytext.netlify.app](https://prewtytext.netlify.app)
+  [prewtytext.netlify.app](https://prettytextgen.netlify.app/)
 
 <!-- ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![No Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen.svg)
@@ -45,7 +45,7 @@ perfect for:
 
 ## how to use
 
-**online:** just go to [prewtytext.netlify.app](https://prewtytext.netlify.app)
+**online:** just go to [prewtytext.netlify.app](https://prettytextgen.netlify.app/)
 
 **locally:**
 1. clone the repo
