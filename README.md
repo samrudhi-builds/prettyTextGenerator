@@ -47,7 +47,7 @@ perfect for:
 
 Organized by category — these provide more "nerd" and aesthetic options.
 
-- Nerd / Tech: Leetspeak, Vaporwave (Fullwidth), Zalgo Light, Zalgo Heavy
+- Nerd: Leetspeak, Vaporwave (Fullwidth), Zalgo Light, Zalgo Heavy
 - Enclosed: Circled
 - Text Effects: Strikethrough, Underline, Slash Through, Double Underline
 - Aesthetic: Small Caps, Superscript, Upside Down, Wide Spaced
