@@ -43,6 +43,17 @@ perfect for:
 
 ---
 
+## new styles (added)
+
+Organized by category — these provide more "nerd" and aesthetic options.
+
+- Nerd / Tech: Leetspeak, Vaporwave (Fullwidth), Zalgo Light, Zalgo Heavy
+- Enclosed: Circled
+- Text Effects: Strikethrough, Underline, Slash Through, Double Underline
+- Aesthetic: Small Caps, Superscript, Upside Down, Wide Spaced
+
+Try typing alphanumeric text and see how digits and punctuation are handled (Vaporwave maps digits to fullwidth; Circled maps digits to circled numerals where available).
+
 ## how to use
 
 **online:** just go to [prewtytext.netlify.app](https://prettytextgen.netlify.app/)
